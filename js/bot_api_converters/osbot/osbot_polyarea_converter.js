@@ -21,7 +21,7 @@ export class OSBotPolyAreaConverter extends OSBotConverter {
         var zMatch = zPattern.exec(text);
         var z = zMatch ? zMatch[1] : 0;
 
-        var positionsPattern = /\{(\d+),(\d+)\}/mg;
+        var positionsPattern = /\((\d+),(\d+)\)/mg;
         var match;
         while ((match = positionsPattern.exec(text))) {
             polyarea.add(new Position(match[1], match[2], z));

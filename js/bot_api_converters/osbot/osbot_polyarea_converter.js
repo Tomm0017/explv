@@ -40,7 +40,7 @@ export class OSBotPolyAreaConverter extends OSBotConverter {
         if (polyarea.positions.length == 0) {
             return "";
         }
-        var output = `polygon {\n`;
+        var output = `polygon {`;
         for (var i = 0; i < polyarea.positions.length; i++) {
             output += `\n    point(${polyarea.positions[i].x}, ${polyarea.positions[i].y})`;
         }

@@ -13,13 +13,13 @@ export var PlaneControl = L.Control.extend({
 
         var incrementPlaneButton = L.DomUtil.create('a', 'leaflet-bar leaflet-control leaflet-control-custom', container);
         incrementPlaneButton.id = 'increase-level';
-        incrementPlaneButton.innerHTML = 'Z +';
+        incrementPlaneButton.innerHTML = 'Level +';
 
         L.DomEvent.on(incrementPlaneButton, 'click', this._increasePlane, this);
 
         var decrementPlaneButton = L.DomUtil.create('a', 'leaflet-bar leaflet-control leaflet-control-custom', container);
         decrementPlaneButton.id = 'decrease-level';
-        decrementPlaneButton.innerHTML = 'Z -';
+        decrementPlaneButton.innerHTML = 'Level -';
 
         L.DomEvent.on(decrementPlaneButton, 'click', this._decreasePlane, this);
 

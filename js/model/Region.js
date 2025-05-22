@@ -11,6 +11,8 @@ export class Region {
 
     constructor(id) {
         this.id = id;
+		this.x = id >> 8;
+		this.z = id & 0xFF;
     }
 
 	static fromPosition(position) {
@@ -34,4 +36,4 @@ export class Region {
 		var y = (this.id & 0xFF) << 6;
 		return new Position(x, y, 0);
 	}
-};
+}

@@ -100,7 +100,7 @@ export var MapLabelControl = L.Control.extend({
 
         var labelsButton = L.DomUtil.create('a', 'leaflet-bar leaflet-control leaflet-control-custom', container);
         labelsButton.id = 'toggle-map-labels';
-        labelsButton.innerHTML = 'Toggle Labels';
+        labelsButton.innerHTML = 'Location Labels';
 
         L.DomEvent.on(labelsButton, 'click', this._toggleMapLabels, this);
 

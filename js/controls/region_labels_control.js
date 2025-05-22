@@ -33,7 +33,7 @@ var RegionLabelsCanvas = CanvasLayer.extend({
 
                 var canvasPoint = info.layer._map.latLngToContainerPoint(latLng);
 
-                ctx.fillText(region.id.toString(), canvasPoint.x, canvasPoint.y);
+                ctx.fillText(`${region.x},${region.z}`, canvasPoint.x, canvasPoint.y);
             }
         }
     }
@@ -54,7 +54,7 @@ export var RegionLabelsControl = L.Control.extend({
 
         var labelsButton = L.DomUtil.create('a', 'leaflet-bar leaflet-control leaflet-control-custom', container);
         labelsButton.id = 'toggle-region-labels';
-        labelsButton.innerHTML = 'Toggle Region Labels';
+        labelsButton.innerHTML = 'Map Square Labels';
 
         var regionLabelsCanvas = new RegionLabelsCanvas({pane: "region-labels"});
         map.getPane("region-labels").style.display = "none";

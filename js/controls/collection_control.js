@@ -69,9 +69,7 @@ export var CollectionControl = L.Control.extend({
         L.DomEvent.on(this._map, 'mousemove', this._drawMouseArea, this);
 
         var context = this;
-        $("#output-type").on('change', () => context._outputCode());
         $("#code-output").on('input propertychange paste', () => context._loadFromText());
-        $("#bot-api").on('change', () => context._outputCode());
 
         return container;
     },
@@ -144,8 +142,7 @@ export var CollectionControl = L.Control.extend({
         var output = "";
 
         if (this._currentDrawable !== undefined) {
-            var botAPI = $("#bot-api option:selected").text();
-            output = converters[botAPI][this._currentConverter].toJava(this._currentDrawable);
+            output = converters["OSBot"][this._currentConverter].toJava(this._currentDrawable);
         }
 
         $("#code-output").html(output);
@@ -153,8 +150,7 @@ export var CollectionControl = L.Control.extend({
     
     _loadFromText: function() {
         if (this._currentDrawable !== undefined) {
-            var botAPI = $("#bot-api option:selected").text();
-            converters[botAPI][this._currentConverter].fromJava($("#code-output").text(), this._currentDrawable);
+            converters["OSBot"][this._currentConverter].fromJava($("#code-output").text(), this._currentDrawable);
         }
     },
 

@@ -192,12 +192,6 @@ input.leaflet-control-custom {
     max-height: 210px;
 }
 
-#settings-panel {
-    justify-content: center;
-    align-items: center;
-    color:white;
-}
-
 #code-output-pre {
     padding: 10px;
     background-color: #121212;

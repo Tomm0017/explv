@@ -37,7 +37,7 @@ export var CollectionControl = L.Control.extend({
         });
 
         // Path control
-        this._createControl('<img src="/css/images/path-icon.png" alt="Area" title="Draw Area"  height="30" width="30">', container, function(e) {
+        this._createControl('<img src="css/images/path-icon.png" alt="Area" title="Draw Area"  height="30" width="30">', container, function(e) {
             this._toggleCollectionMode(this._path, "path_converter", e.target);
         });
 

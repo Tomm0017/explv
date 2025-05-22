@@ -3,17 +3,12 @@
 import {Position} from '../model/Position.js';
 import {Path} from '../model/Path.js';
 
-
 // Import converters
-import {OSBotAreasConverter} from '../bot_api_converters/osbot/osbot_areas_converter.js';
-import {OSBotPathConverter} from '../bot_api_converters/osbot/osbot_path_converter.js';
-import {OSBotPolyAreaConverter} from '../bot_api_converters/osbot/osbot_polyarea_converter.js';
+import {RsModConverter} from '../bot_api_converters/rsmod/rsmod_converter.js';
 
-var converters = {
-    "OSBot": {
-        "areas_converter": new OSBotAreasConverter(),
-        "path_converter": new OSBotPathConverter(),
-        "polyarea_converter": new OSBotPolyAreaConverter()
+let converters = {
+    "RSMod": {
+        "path_converter": new RsModConverter(),
     }
 };
 
@@ -142,7 +137,7 @@ export var CollectionControl = L.Control.extend({
         var output = "";
 
         if (this._currentDrawable !== undefined) {
-            output = converters["OSBot"][this._currentConverter].toJava(this._currentDrawable);
+            output = converters["RSMod"][this._currentConverter].toText(this._currentDrawable);
         }
 
         $("#code-output").html(output);
@@ -150,7 +145,7 @@ export var CollectionControl = L.Control.extend({
     
     _loadFromText: function() {
         if (this._currentDrawable !== undefined) {
-            converters["OSBot"][this._currentConverter].fromJava($("#code-output").text(), this._currentDrawable);
+            converters["RSMod"][this._currentConverter].fromText($("#code-output").text(), this._currentDrawable);
         }
     },
 

@@ -1,20 +1,8 @@
 'use strict';
 
 export class Converter {
+
+    fromText(text, drawable) {}
     
-    fromJava(text, drawable) {}
-    
-    toJava(drawable) {
-        return this.toJavaArray(drawable);
-    }
-    
-    toRaw(drawable) {}
-    
-    toJavaSingle(drawable) {}
-    
-    toJavaArray(drawable) {}
-    
-    toJavaList(drawable) {}
-    
-    toJavaArraysAsList(drawable) {}
+    toText(drawable) {}
 }

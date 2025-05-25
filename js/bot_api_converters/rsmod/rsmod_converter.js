@@ -35,7 +35,7 @@ export class RsModConverter extends Converter {
             let mz = (z / 64) | 0;
             let lx = x % 64;
             let lz = z % 64;
-            output += `vertex(VertexCoord(${mx}, ${mz}, ${lx}, ${lz})),\n`;
+            output += `vertex(VertexCoord(${mx}, ${mz}, ${lx}, ${lz}))\n`;
         }
         output += "\n";
         return output;
